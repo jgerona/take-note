@@ -4,18 +4,6 @@ const fs = require('fs');
 const PORT = 3001;
 const app = express();
 var notes = [];
-// function getNotes() {
-//     fs.readFile(path.join(__dirname, './db/db.json'), "utf-8", (err, data) => {
-//         err ? console.error(err) : notes = (JSON.parse(data));
-//     });
-//     // fs.readFileSync("./db/db.json", (err, data) => {
-//     //     if (err) {
-//     //         console.error(err);
-//     //     }
-//     //     notes = JSON.parse(data);
-//          console.log(data);
-//     // })
-// }
 
 const { v4: uuidv4 } = require('uuid');
 //import {v4 as uuidv4} from 'uuid';
@@ -44,13 +32,6 @@ app.get('/api/notes', (req,res) => {
         }
     })
 })
-// app.get('/api/notes', (req, res) => {
-//     fs.readFile(path.join(__dirname, './db/db.json'), "utf-8", (err, data) => {
-//         err ? console.error(err) : 
-//         (res.json(JSON.parse(data))
-//         (notes = JSON.parse(data)));
-//     });
-// });
 
 app.post('/api/notes', (req, res) => {
     console.log(`${req.method} request recieved to add note`);
