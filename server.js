@@ -42,9 +42,9 @@ app.post('/api/notes', (req, res) => {
         text,
         id: uuidv4()
     }
-    console.log(notes);
+    //console.log(notes);
     notes.push(newNote);
-    console.log(`${notes} again`);
+    //console.log(`${notes} again`);
     fs.writeFileSync(path.join(__dirname, './db/db.json'), JSON.stringify(notes))
     res.json(newNote);
 });
